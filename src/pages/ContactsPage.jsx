@@ -40,10 +40,10 @@ const ContactsPage = () => {
         if(!validateEmail(email)){
             setEmailErrorMsg('Invalid Email.')
         }
-        else if(message.length > 800){
+        if(message.length > 800){
             setMessageErrorMsg('message is too long.')
         }
-        else{
+        if(email && name && message && validateEmail(email)){
             const data = {
                 from_email: email,
                 to_name: 'ali yaakoub',
@@ -115,7 +115,7 @@ const ContactsPage = () => {
                 {loading && <div className='w-full flex justify-center items-center'>
                     <div className='loading'/>
                 </div>}
-                <div className='w-full flex justify-center items-center pb-5'>
+                <div className='w-full flex justify-center items-center pb-5 mt-5'>
                     <button 
                         onClick={handleSubmit}
                         disabled={loading}
