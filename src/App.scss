@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;700&display=swap");
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.extra-thin-font {
+  font-weight: 100;
+}
+.thin-font {
+  font-weight: 200;
+}
+.medium-font {
+  font-weight: 300;
+}
+.bold-font {
+  font-weight: 500;
+}
+
+.sideBar {
+  height: 90vh;
+}
+
+.mediaBtn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menuBtn {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .close {
+    animation-name: close;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+  .open {
+    animation-name: open;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes close {
+  from {
+    max-height: 500px;
+  }
+  to {
+    max-height: 0;
+  }
+}
+@keyframes open {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+
+.submitBtn {
+  transition: transform 0.2s;
+}
+.submitBtn:hover {
+  transform: scale(1.05);
+}
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+.loading {
+  animation-name: loading;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes loading {
+  from {
+    transform: translateX(-10vw);
+  }
+  to {
+    transform: translateX(10vw);
+  }
+}
+
+.card-img {
+  object-fit: cover;
+}
+
+.active {
+  color: black;
+}
+
+.icon {
+  transition: 0.2s;
+  cursor: pointer;
+  transition-property: color, transform;
+}
+.icon:hover {
+  color: black;
+  transform: scale(1.2);
+}
+
+.description-header {
+  background: rgb(173, 181, 189);
+  background: linear-gradient(
+    90deg,
+    rgba(173, 181, 189, 1) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  transform: translateX(-40px);
+  padding: 5px 0 5px 40px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.project-link {
+  font-weight: 700;
+}
+
+.list {
+  list-style: disc;
+}
