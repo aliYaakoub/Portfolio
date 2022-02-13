@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { SiGithub } from 'react-icons/si';
+import { motion } from 'framer-motion';
 import { BsLinkedin, BsGoogle, BsInstagram } from 'react-icons/bs';
 
 import { useAppContext } from '../components/Context';
@@ -77,7 +78,11 @@ const ContactsPage = () => {
     };
 
     return (
-        <div className='flex-grow'>
+        <motion.div 
+            initial={{opacity: 0, scale: 0.1}}
+            animate={{opacity: 1, scale: 1}}
+            className='flex-grow'
+        >
             <div className='w-full'>
                 <h2 style={{color: colors.text.primary}} className='text-2xl py-5 text-center'>Send me a message !</h2>
                 <div className='flex w-full sm:flex-row flex-col'>
@@ -150,7 +155,7 @@ const ContactsPage = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

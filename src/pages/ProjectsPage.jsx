@@ -30,8 +30,8 @@ const ProjectsPage = () => {
                 :
                 <>
                     {projects && <p className='py-5' style={{color: colors.text.primary}} >Showing {projects.length} Results.</p>}
-                    {projects && projects.map(project => (
-                        <ProjectCard project={project.node} key={project.id} />
+                    {projects && projects.map((project, index) => (
+                        <ProjectCard project={project.node} key={project.id} index={index} />
                     ))}
                 </>
             }

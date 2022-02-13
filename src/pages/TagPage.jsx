@@ -46,8 +46,8 @@ const TagPage = () => {
                         <p style={{color: colors.text.primary}}>No Projects For This Tag</p>
                     </div>
                     :
-                    projects.map(project => (
-                        <ProjectCard project={project} key={project.id} />
+                    projects.map((project, index) => (
+                        <ProjectCard project={project} key={project.id} index={index} />
                     ))
             }
         </div>

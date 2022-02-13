@@ -25,13 +25,15 @@ const Slider = ({photos}) => {
     }
 
     return (
-        <div className='my-5 px-10'>
-            <h2 className="description-header text-2xl text-black flex items-center">
-                <AiFillPicture className='mr-3' />
-                <span>Pictures</span>
-            </h2>
-            <div className='w-full h-96 mt-7 pt-0'>
-                <div className="w-full h-full flex justify-center items-center relative">
+        <div className='my-5 '>
+            <div className='px-10'>
+                <h2 className="description-header text-2xl text-black flex items-center">
+                    <AiFillPicture className='mr-3' />
+                    <span>Pictures</span>
+                </h2>
+            </div>
+            <div className='w-full md:px-5 md:h-96 mt-7 pt-0'>
+                <div className="w-full h-full px-10 md:px-0 flex justify-center items-center relative">
                     {photos.map((image, ind)=>{
                         if (ind !== index){
                             return null

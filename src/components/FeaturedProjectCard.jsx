@@ -1,15 +1,22 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
 import { TagFlag } from '.';
 import { useAppContext } from './Context';
 import { BiArrowFromLeft } from 'react-icons/bi'
 import { Link } from 'react-router-dom';
 
-const FeaturedProjectCard = ({project}) => {
+const FeaturedProjectCard = ({project, index}) => {
 
     const { colors } = useAppContext();
 
     return (
-        <div style={{backgroundColor: colors.secondary}} className='rounded-md transition-colors overflow-hidden w-full shadow-md mb-8'>
+        <motion.div 
+            initial={{opacity: 0, scale: 0.1}} 
+            animate={{opacity: 1, scale: 1, transition: {delay: index * 0.1 }}}
+            style={{backgroundColor: colors.secondary}} 
+            className='rounded-md transition-colors overflow-hidden w-full shadow-md mb-8'
+        >
             <img src={project.picture.url} alt='' className='w-full h-60 card-img hover:h-80 transition-all duration-150' />
             <div className="p-5">
                 <Link to={`/project/${project.slug}`}>
@@ -25,7 +32,7 @@ const FeaturedProjectCard = ({project}) => {
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -25,8 +25,8 @@ const HomePage = () => {
                     <Animation />
                 </div>
                 :
-                featuredProjects && featuredProjects.map(card => (
-                    <FeaturedProjectCard key={card.id} project={card} />
+                featuredProjects && featuredProjects.map((card, index) => (
+                    <FeaturedProjectCard key={card.id} project={card} index={index} />
                 ))
             }
         </div>

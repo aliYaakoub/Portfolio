@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillTags } from 'react-icons/ai';
 import { BiCategory } from 'react-icons/bi';
+import { motion } from 'framer-motion';
 
 import Animation from '../components/generalComponents/Animation';
 import { getAllTags, getAllCategories } from './../services';
@@ -34,7 +35,13 @@ const FilterSearchPage = () => {
                 </div>
                 :
                 <>
-                    {tags && categories && <div style={{backgroundColor: colors.secondary}} className='w-full rounded-md px-5'>
+                    {tags && categories && 
+                    <motion.div 
+                        initial={{opacity: 0, scale: 0.1}} 
+                        animate={{opacity: 1, scale: 1}} 
+                        style={{backgroundColor: colors.secondary}} 
+                        className='w-full rounded-md px-5'
+                    >
                         <div className='w-full py-5'>
                             <div className="flex items-center px-2" style={{color: colors.text.primary}} >
                                 <AiFillTags size={30} />
@@ -57,7 +64,7 @@ const FilterSearchPage = () => {
                                 ))}
                             </div>
                         </div>
-                    </div>}
+                    </motion.div>}
                 </>
             }
         </div>
